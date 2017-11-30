@@ -1,0 +1,14 @@
+{
+    "name": "vendor/starter-todo4",
+    "description": "Description of project starter-todo4.",
+    "authors": [
+        {
+            "name": "namblue",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "6.4.x-dev"
+    }
+}
