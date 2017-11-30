@@ -1,17 +1,17 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Modified to use REST client to get port data from our server.
  */
+define('REST_SERVER', 'http://backend.local');  // the REST server host
+define('REST_PORT', $_SERVER['SERVER_PORT']);   // the port you are running the server on
 
 /**
  * Description of Tasks
  *
  * @author steve
  */
-class Tasks extends XML_Model 
+class Tasks extends REST_Model 
 {        
     public function __construct()
     {

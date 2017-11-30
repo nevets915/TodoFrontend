@@ -9,6 +9,21 @@ Team conventions: Allman notation, markdown for changelog
 Changelog format: [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
 
 ## Version Log
+
+### Version 5.0 - GL, SM
+Release Date: 11.02.17
+
+##### New Components
+    - core/REST_Model
+        - REST client code for CRUD functionality implemented
+
+##### Updated components
+    - models/Tasks
+        - now uses REST model instead
+
+##### Comments
+	- This application is now a client-only application that uses REST to view/modify data
+
 ### Version 4.0 - GL, SM
 Release Date: 11.02.17
 
@@ -20,7 +35,6 @@ Release Date: 11.02.17
 ##### Comments
 	- Stored data is now in xml now instead of csv
 
-## Version Log
 ### Version 3.0 - GL, SM
 Release Date: 11.02.17
 
@@ -35,7 +49,6 @@ Release Date: 11.02.17
     - model     
         - Tasks - Added getCompletedTasks, setTask, setPriority, setSize, setGroup
 
-## Version Log
 ### Version 2.0 - GL, SM
 Release Date: 10.19.17
 
