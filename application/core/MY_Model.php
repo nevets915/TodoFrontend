@@ -360,3 +360,5 @@ include_once 'RDB_Model.php';	// backed by an RDB
 include_once 'Memory_Model.php';	// In-memory only
 include_once 'CSV_Model.php';	// CSV persisted
 include_once 'XML_Model.php';	// XML persisted
+include_once 'REST_Model.php';	// RESTFUL persisted
+
