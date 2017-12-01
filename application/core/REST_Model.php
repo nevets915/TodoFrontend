@@ -36,16 +36,7 @@ class REST_Model extends Memory_Model
 		// start with an empty collection
 		$this->_data = array(); // an array of objects
 		$this->_fields = array(); // an array of strings
-                if (file_exists($this->_origin)) 
-                {
-                    // and populate the collection
-                    $this->load();
 
-                } 
-                else 
-                {
-                    exit('Failed to open test.xml.');
-                }
 	}
 
 	/**
