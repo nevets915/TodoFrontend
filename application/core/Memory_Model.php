@@ -135,7 +135,7 @@ class Memory_Model extends CI_Model implements DataMapper
 
 	// Add a record to the collection
         // OVER-RIDE THIS METHOD in persistence choice implementations
-	protected function add($record)
+	function add($record)
 	{
 		// convert object from associative array, if needed
 		$record = (is_array($record)) ? (object) $record : $record;
@@ -149,14 +149,14 @@ class Memory_Model extends CI_Model implements DataMapper
 
 	// Retrieve an existing collection record as an object
         // OVER-RIDE THIS METHOD in persistence choice implementations
-	protected function get($key, $key2 = null)
+	function get($key, $key2 = null)
 	{
 		return (isset($this->_data[$key])) ? $this->_data[$key] : null;
 	}
 
 	// Update a record in the collection
         // OVER-RIDE THIS METHOD in persistence choice implementations
-	protected function update($record)
+	function update($record)
 	{
 		// convert object from associative array, if needed
 		$record = (is_array($record)) ? (object) $record : $record;
@@ -171,7 +171,7 @@ class Memory_Model extends CI_Model implements DataMapper
 
 	// Delete a record from the DB
         // OVER-RIDE THIS METHOD in persistence choice implementations       
-	protected function delete($key, $key2 = null)
+	function delete($key, $key2 = null)
 	{
 		if (isset($this->_data[$key]))
 		{

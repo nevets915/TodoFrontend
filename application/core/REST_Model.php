@@ -52,7 +52,7 @@ class REST_Model extends Memory_Model
 	 * Load the collection state appropriately, depending on persistence choice.
 	 * OVER-RIDE THIS METHOD in persistence choice implementations
 	 */
-	protected function load()
+	function load()
 	{
             // load our data from the REST backend
             $this->rest->initialize(array('server' => REST_SERVER));
@@ -68,12 +68,12 @@ class REST_Model extends Memory_Model
 	 * Store the collection state appropriately, depending on persistence choice.
 	 * OVER-RIDE THIS METHOD in persistence choice implementations
 	 */
-	protected function store()
+	function store()
 	{
 	}
         
         // Retrieve an existing DB record as an object
-        protected function get($key, $key2 = null)
+        function get($key, $key2 = null)
         {
                 $this->rest->initialize(array('server' => REST_SERVER));
                 $this->rest->option(CURLOPT_PORT, REST_PORT);
@@ -81,7 +81,7 @@ class REST_Model extends Memory_Model
         }
         
         // Delete a record from the DB
-        protected function delete($key, $key2 = null)
+        function delete($key, $key2 = null)
         {
                 $this->rest->initialize(array('server' => REST_SERVER));
                 $this->rest->option(CURLOPT_PORT, REST_PORT);
@@ -90,7 +90,7 @@ class REST_Model extends Memory_Model
         }
         
         // Update a record in the DB
-        protected function update($record)
+        function update($record)
         {
                 $this->rest->initialize(array('server' => REST_SERVER));
                 $this->rest->option(CURLOPT_PORT, REST_PORT);
@@ -100,7 +100,7 @@ class REST_Model extends Memory_Model
         }
         
         // Add a record to the DB
-        protected function add($record)
+        function add($record)
         {
                 $this->rest->initialize(array('server' => REST_SERVER));
                 $this->rest->option(CURLOPT_PORT, REST_PORT);
