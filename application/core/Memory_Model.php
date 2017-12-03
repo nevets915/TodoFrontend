@@ -133,52 +133,46 @@ class Memory_Model extends CI_Model implements DataMapper
 		return $object;
 	}
 
-	// Add a record to the collection
-        // OVER-RIDE THIS METHOD in persistence choice implementations
+        // Retrieve an existing DB record as an object
+        public function get($key, $key2 = null)
 	function add($record)
-	{
-		// convert object from associative array, if needed
-		$record = (is_array($record)) ? (object) $record : $record;
-
-		// update the DB table appropriately
-		$key = $record->{$this->_keyfield};
-		$this->_data[$key] = $record;
-
-		$this->store();
-	}
-
-	// Retrieve an existing collection record as an object
-        // OVER-RIDE THIS METHOD in persistence choice implementations
+        {
+                $this->rest->initialize(array('server' => REST_SERVER));
+                $this->rest->option(CURLOPT_PORT, REST_PORT);
+                return $this->rest->get('job/' . $key);
+        }
+        
+        // Delete a record from the DB
+        public function delete($key, $key2 = null)
 	function get($key, $key2 = null)
-	{
-		return (isset($this->_data[$key])) ? $this->_data[$key] : null;
-	}
-
-	// Update a record in the collection
-        // OVER-RIDE THIS METHOD in persistence choice implementations
+        {
+                $this->rest->initialize(array('server' => REST_SERVER));
+                $this->rest->option(CURLOPT_PORT, REST_PORT);
+                $this->rest->delete('job/' . $key);
+                $this->load(); // because the "database" might have changed
+        }
+        
+        // Update a record in the DB
+        public function update($record)
 	function update($record)
-	{
-		// convert object from associative array, if needed
-		$record = (is_array($record)) ? (object) $record : $record;
-		// update the collection appropriately
-		$key = $record->{$this->_keyfield};
-		if (isset($this->_data[$key]))
-		{
-			$this->_data[$key] = $record;
-			$this->store();
-		}
-	}
-
-	// Delete a record from the DB
-        // OVER-RIDE THIS METHOD in persistence choice implementations       
+        {
+                $this->rest->initialize(array('server' => REST_SERVER));
+                $this->rest->option(CURLOPT_PORT, REST_PORT);
+                $key = $record->{$this->_keyfield};
+                $retrieved = $this->rest->put('job/' . $key, $record);
+                $this->load(); // because the "database" might have changed
+        }
+        
+        // Add a record to the DB
+        public function add($record)
 	function delete($key, $key2 = null)
-	{
-		if (isset($this->_data[$key]))
-		{
-			unset($this->_data[$key]);
-			$this->store();
-		}
-	}
+        {
+                $this->rest->initialize(array('server' => REST_SERVER));
+                $this->rest->option(CURLOPT_PORT, REST_PORT);
+                $key = $record->{$this->_keyfield};
+                $retrieved = $this->rest->post('job/' . $key, $record);
+                $this->load(); // because the "database" might have changed
+        }
 
 	// Determine if a key exists
 	function exists($key, $key2 = null)
