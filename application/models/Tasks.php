@@ -15,7 +15,7 @@ class Tasks extends REST_Model
 {        
     public function __construct()
     {
-        parent::__construct(APPPATH . '../data/tasks.xml', 'id', 'task');
+        parent::__construct(APPPATH . '', 'id', 'task');
     }
 
     function getCategorizedTasks()
