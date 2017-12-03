@@ -42,7 +42,7 @@ class REST_Model extends Memory_Model
 	 * Load the collection state appropriately, depending on persistence choice.
 	 * OVER-RIDE THIS METHOD in persistence choice implementations
 	 */
-	function load()
+	protected function load()
 	{
             // load our data from the REST backend
             $this->rest->initialize(array('server' => REST_SERVER));
@@ -64,8 +64,4 @@ class REST_Model extends Memory_Model
 	function store()
 	{
 	}       
-        function get($key, $key2 = null)
-        function delete($key, $key2 = null)
-        function update($record)
-        function add($record)
 }

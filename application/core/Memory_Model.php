@@ -135,7 +135,6 @@ class Memory_Model extends CI_Model implements DataMapper
 
         // Retrieve an existing DB record as an object
         public function get($key, $key2 = null)
-	function add($record)
         {
                 $this->rest->initialize(array('server' => REST_SERVER));
                 $this->rest->option(CURLOPT_PORT, REST_PORT);
@@ -144,7 +143,6 @@ class Memory_Model extends CI_Model implements DataMapper
         
         // Delete a record from the DB
         public function delete($key, $key2 = null)
-	function get($key, $key2 = null)
         {
                 $this->rest->initialize(array('server' => REST_SERVER));
                 $this->rest->option(CURLOPT_PORT, REST_PORT);
@@ -154,7 +152,6 @@ class Memory_Model extends CI_Model implements DataMapper
         
         // Update a record in the DB
         public function update($record)
-	function update($record)
         {
                 $this->rest->initialize(array('server' => REST_SERVER));
                 $this->rest->option(CURLOPT_PORT, REST_PORT);
@@ -165,7 +162,6 @@ class Memory_Model extends CI_Model implements DataMapper
         
         // Add a record to the DB
         public function add($record)
-	function delete($key, $key2 = null)
         {
                 $this->rest->initialize(array('server' => REST_SERVER));
                 $this->rest->option(CURLOPT_PORT, REST_PORT);
